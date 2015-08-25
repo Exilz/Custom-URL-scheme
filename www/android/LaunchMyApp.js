@@ -5,10 +5,10 @@
 
   function waitForAndCallHandlerFunction(url) {
     if (typeof window.handleOpenURL == "function"
-        && window.location.href === "http://meteor.local/") {
-            alert('handle !');
+        && window.location.href.search("meteor.local") !== -1) {
       window.handleOpenURL(url);
     } else if (remainingAttempts-- > 0) {
+        console.info(window.location.href);
       setTimeout(function(){waitForAndCallHandlerFunction(url)}, 500);
     }
   }
