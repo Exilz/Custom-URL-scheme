@@ -6,7 +6,6 @@
     function waitForAndCallHandlerFunction(url) {
         if (typeof window.handleOpenURL == "function" &&
             window.location.href == "http://meteor.local/") {
-            console.log('handle open url');
             window.handleOpenURL(url);
         } else if (remainingAttempts-- > 0) {
             setTimeout(function() {
@@ -16,7 +15,6 @@
     }
 
     function triggerOpenURL() {
-        console.log('triggerOpenURL ');
         cordova.exec(
             waitForAndCallHandlerFunction,
             null,
@@ -27,6 +25,6 @@
     document.addEventListener("deviceready", function() {
         setTimeout(function() {
             triggerOpenURL();
-        }, 5000);
+        }, 500);
     }, false);
 }());
