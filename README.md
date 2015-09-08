@@ -1,4 +1,8 @@
 # Custom URL scheme PhoneGap Plugin
+# METEOR FORK
+
+** This fork fixes the cold start bug on Android when using Meteor. iOS not tested yet. **
+
 #### launch your app by a link like this: `mycoolapp://`
 for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
 - This repo is for PhoneGap 3.0.0 and up
